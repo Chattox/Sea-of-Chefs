@@ -12,9 +12,21 @@ export interface TimerProps {
 export const Timer = ({ label, img, duration }: TimerProps) => {
   const { classes } = useStyles();
   const [timeLeft, setTimeLeft] = useState(duration);
+  const [inProgress, setInProgress] = useState(false);
+
   const countdown = useInterval(() => {
     setTimeLeft((t) => t - 1);
   }, 1000);
+
+  const startTimer = () => {
+    countdown.start();
+    setInProgress(true);
+  };
+
+  const resetTimer = () => {
+    setTimeLeft(duration);
+    setInProgress(false);
+  };
 
   return (
     <Container>
@@ -22,11 +34,14 @@ export const Timer = ({ label, img, duration }: TimerProps) => {
         <Group position="apart">
           <Title>{label}</Title>
           <Group>
-            <Button onClick={countdown.start} className={classes.button}>
+            <Button onClick={startTimer} className={classes.button}>
               Start
             </Button>
-            <Button onClick={countdown.stop} className={classes.button}>
-              Stop
+            <Button
+              onClick={countdown.active ? countdown.stop : inProgress ? resetTimer : countdown.stop}
+              className={classes.button}
+            >
+              {countdown.active ? 'Stop' : inProgress ? 'Reset' : 'Stop'}
             </Button>
           </Group>
         </Group>
