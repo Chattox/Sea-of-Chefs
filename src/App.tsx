@@ -1,10 +1,10 @@
 import './App.css';
-import { Timer } from './Components/Timer';
+import { Timer } from './components/Timer';
 
 function App() {
   return (
     <div className="App">
-      <Timer label="Test Timer" img={require('./Components/Timer/fish.png')} duration={40} />
+      <Timer label="Test Timer" img={require('./data/images/fish.png')} duration={40} />
     </div>
   );
 }
