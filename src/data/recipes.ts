@@ -9,6 +9,11 @@ export interface RecipeProps {
   };
 }
 
+export interface RecipeCategoryProps {
+  land: Array<RecipeProps>;
+  sea: Array<RecipeProps>;
+}
+
 const uncookableDuration = {
   undercooked: 0,
   cooked: 0,
@@ -44,55 +49,59 @@ const monsterDuration = {
   fire: 540,
 };
 
-export const recipes: Array<RecipeProps> = [
-  {
-    label: 'Bait',
-    img: require('./images/fish.png'),
-    duration: { ...uncookableDuration },
-  },
-  {
-    label: 'Fruit',
-    img: require('./images/fish.png'),
-    duration: { ...uncookableDuration },
-  },
-  {
-    label: 'Snake',
-    img: require('./images/fish.png'),
-    duration: { ...meatDuration },
-  },
-  {
-    label: 'Chicken',
-    img: require('./images/fish.png'),
-    duration: { ...meatDuration },
-  },
-  {
-    label: 'Pig',
-    img: require('./images/fish.png'),
-    duration: { ...meatDuration },
-  },
-  {
-    label: 'Shark',
-    img: require('./images/fish.png'),
-    duration: { ...meatDuration },
-  },
-  {
-    label: 'Fish',
-    img: require('./images/fish.png'),
-    duration: { ...fishDuration },
-  },
-  {
-    label: 'Trophy Fish',
-    img: require('./images/fish.png'),
-    duration: { ...trophyFishDuration },
-  },
-  {
-    label: 'Megalodon',
-    img: require('./images/fish.png'),
-    duration: { ...monsterDuration },
-  },
-  {
-    label: 'Kraken',
-    img: require('./images/fish.png'),
-    duration: { ...monsterDuration },
-  },
-];
+export const recipes: RecipeCategoryProps = {
+  land: [
+    {
+      label: 'Bait',
+      img: require('./images/fish.png'),
+      duration: { ...uncookableDuration },
+    },
+    {
+      label: 'Fruit',
+      img: require('./images/fish.png'),
+      duration: { ...uncookableDuration },
+    },
+    {
+      label: 'Snake',
+      img: require('./images/fish.png'),
+      duration: { ...meatDuration },
+    },
+    {
+      label: 'Chicken',
+      img: require('./images/fish.png'),
+      duration: { ...meatDuration },
+    },
+    {
+      label: 'Pig',
+      img: require('./images/fish.png'),
+      duration: { ...meatDuration },
+    },
+  ],
+  sea: [
+    {
+      label: 'Shark',
+      img: require('./images/fish.png'),
+      duration: { ...meatDuration },
+    },
+    {
+      label: 'Fish',
+      img: require('./images/fish.png'),
+      duration: { ...fishDuration },
+    },
+    {
+      label: 'Trophy Fish',
+      img: require('./images/fish.png'),
+      duration: { ...trophyFishDuration },
+    },
+    {
+      label: 'Megalodon',
+      img: require('./images/fish.png'),
+      duration: { ...monsterDuration },
+    },
+    {
+      label: 'Kraken',
+      img: require('./images/fish.png'),
+      duration: { ...monsterDuration },
+    },
+  ],
+};
