@@ -4,10 +4,11 @@ export const useStyles = createStyles((theme) => ({
   container: {
     border: '0.1rem solid',
     borderColor: theme.colors.gray[5],
-    borderRadius: '0.2rem',
+    borderRadius: '1rem',
     maxWidth: '90%',
     padding: '1rem',
     margin: '0rem',
+    boxShadow: theme.shadows.xs,
   },
   button: {
     width: '5rem',
