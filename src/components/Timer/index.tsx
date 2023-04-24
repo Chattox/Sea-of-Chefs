@@ -25,10 +25,10 @@ export const Timer = ({ label, img, duration }: RecipeProps) => {
   };
 
   return (
-    <Container>
+    <Container className={classes.container}>
       <Stack>
         <Group position="apart">
-          <Title>{label}</Title>
+          <Title inline>{label}</Title>
           <Group>
             <Button onClick={startTimer} className={classes.button}>
               Start
