@@ -53,54 +53,54 @@ export const recipes: RecipeCategoryProps = {
   land: [
     {
       label: 'Bait',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...uncookableDuration },
     },
     {
       label: 'Fruit',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...uncookableDuration },
     },
     {
       label: 'Snake',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...meatDuration },
     },
     {
       label: 'Chicken',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...meatDuration },
     },
     {
       label: 'Pig',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...meatDuration },
     },
   ],
   sea: [
     {
       label: 'Shark',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...meatDuration },
     },
     {
       label: 'Fish',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...fishDuration },
     },
     {
       label: 'Trophy Fish',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...trophyFishDuration },
     },
     {
       label: 'Megalodon',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...monsterDuration },
     },
     {
       label: 'Kraken',
-      img: require('./images/fish.png'),
+      img: require('./images/testfish.png'),
       duration: { ...monsterDuration },
     },
   ],

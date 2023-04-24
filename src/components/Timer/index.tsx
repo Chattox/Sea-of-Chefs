@@ -1,17 +1,13 @@
 import { Group, Title, Avatar, Progress, Button, Stack, Container, Text } from '@mantine/core';
-import { useStyles } from './index.styles';
 import { useState } from 'react';
 import { useInterval } from '@mantine/hooks';
 
-export interface TimerProps {
-  label: string;
-  img: string;
-  duration: number;
-}
+import { useStyles } from './index.styles';
+import { RecipeProps } from '../../data/recipes';
 
-export const Timer = ({ label, img, duration }: TimerProps) => {
+export const Timer = ({ label, img, duration }: RecipeProps) => {
   const { classes } = useStyles();
-  const [timeLeft, setTimeLeft] = useState(duration);
+  const [timeLeft, setTimeLeft] = useState(duration.cooked);
   const [inProgress, setInProgress] = useState(false);
 
   const countdown = useInterval(() => {
@@ -24,7 +20,7 @@ export const Timer = ({ label, img, duration }: TimerProps) => {
   };
 
   const resetTimer = () => {
-    setTimeLeft(duration);
+    setTimeLeft(duration.cooked);
     setInProgress(false);
   };
 
@@ -49,12 +45,12 @@ export const Timer = ({ label, img, duration }: TimerProps) => {
           <Avatar src={img} size="xl" radius={'4rem'} />
           <Stack align="flex-end" className={classes.progressBarContainer}>
             <Text>
-              {timeLeft} / {duration}
+              {timeLeft} / {duration.cooked}
             </Text>
             <Progress
               size="md"
               radius="xl"
-              value={(timeLeft / duration) * 100}
+              value={(timeLeft / duration.cooked) * 100}
               className={classes.progressBar}
             />
           </Stack>
