@@ -1,10 +1,29 @@
+import { Accordion } from '@mantine/core';
 import './App.css';
 import { Timer } from './components/Timer';
+import { recipes } from './data/recipes';
 
 function App() {
   return (
     <div className="App">
-      <Timer label="Test Timer" img={require('./data/images/fish.png')} duration={40} />
+      <Accordion multiple defaultValue={['land', 'sea']}>
+        <Accordion.Item value="land">
+          <Accordion.Control>Land</Accordion.Control>
+          <Accordion.Panel>
+            {recipes.land.map((recipe) => (
+              <Timer label={recipe.label} img={recipe.img} duration={recipe.duration} />
+            ))}
+          </Accordion.Panel>
+        </Accordion.Item>
+        <Accordion.Item value="sea">
+          <Accordion.Control>Sea</Accordion.Control>
+          <Accordion.Panel>
+            {recipes.sea.map((recipe) => (
+              <Timer label={recipe.label} img={recipe.img} duration={recipe.duration} />
+            ))}
+          </Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
     </div>
   );
 }
